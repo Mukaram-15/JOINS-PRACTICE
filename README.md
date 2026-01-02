@@ -1,10 +1,18 @@
 # JOINS-PRACTICE
+
 *COMPANY*: CODTECH IT SOLUTIONS
+
 *NAME*: MOHAMMED MUKARAM ALI 
+
 *INTERN ID*: E8EDB396AAFEF80D
+
 *DOMAIN*: FRONT END DEVELOPMENT 
+
 *DURATION*: 4 WEEKS
+
 *MENTOR*: NEELA SANTOSH 
+
+
 MySQL is a popular open-source relational database management system that is widely used across India and around the world for storing and managing structured data. It works using Structured Query Language (SQL), which is a standard language used to create, update, and retrieve data from databases. Because of its speed, reliability, and ease of use, MySQL is commonly used in web applications, mobile apps, government systems, banking platforms, e-commerce websites, and college or corporate projects. It is also an important part of the LAMP stack (Linux, Apache, MySQL, PHP/Python), which many Indian developers use for building dynamic and interactive websites.
 
 MySQL provides several tools that make database management simple and efficient. The MySQL Command Line Client allows users to run SQL queries directly through a terminal. This is useful for developers who prefer a fast, text-based interface. MySQL Workbench is another popular tool, especially for students and professionals, as it provides a graphical interface where users can design databases, write and test queries, create data models, and manage server settings. Many people in India also use phpMyAdmin, a web-based tool, because it is easy to install on local servers like XAMPP or WAMP. For backup and migration, tools like mysqldump and MySQL Shell are commonly used. MySQL also supports connectors for programming languages like Java, Python, PHP, and C++, which are widely taught in Indian educational institutions.
