@@ -1,15 +1,58 @@
-SELECT students.name, enrollments.course_id
-FROM students
-INNER JOIN enrollments ON students.student_id = enrollments.student_id;
-SELECT students.name, enrollments.course_id
-FROM students
-LEFT JOIN enrollments ON students.student_id = enrollments.student_id;
-SELECT students.name, enrollments.course_id
-FROM students
-RIGHT JOIN enrollments ON students.student_id = enrollments.student_id;
-SELECT students.name, enrollments.course_id
-FROM students
-FULL OUTER JOIN enrollments ON students.student_id = enrollments.student_id;
-SELECT students.name, enrollments.course_id
-FROM students
-CROSS JOIN enrollments;
+-- Create and select the database first
+CREATE DATABASE IF NOT EXISTS join_practice;
+USE join_practice;
+
+-- 1. SETUP: Create Tables
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
+);
+
+-- 2. SETUP: Insert Sample Data
+INSERT INTO Departments (dept_id, dept_name) VALUES 
+(10, 'Engineering'),
+(20, 'Sales'),
+(30, 'Marketing');
+
+INSERT INTO Employees (emp_id, name, dept_id) VALUES 
+(1, 'Alice', 10),
+(2, 'Bob', 20),
+(3, 'Charlie', NULL);
+
+-- 3. THE QUERIES
+
+-- INNER JOIN
+SELECT 'Inner' AS type, e.name, d.dept_name
+FROM Employees e
+INNER JOIN Departments d ON e.dept_id = d.dept_id;
+
+-- LEFT JOIN
+SELECT 'Left' AS type, e.name, d.dept_name
+FROM Employees e
+LEFT JOIN Departments d ON e.dept_id = d.dept_id;
+
+-- RIGHT JOIN
+SELECT 'Right' AS type, e.name, d.dept_name
+FROM Employees e
+RIGHT JOIN Departments d ON e.dept_id = d.dept_id;
+
+-- FULL JOIN (MySQL Workaround using UNION)
+SELECT 'Full' AS type, e.name, d.dept_name
+FROM Employees e
+LEFT JOIN Departments d ON e.dept_id = d.dept_id
+UNION
+SELECT 'Full' AS type, e.name, d.dept_name
+FROM Employees e
+RIGHT JOIN Departments d ON e.dept_id = d.dept_id;
+
+-- CROSS JOIN
+SELECT 'Cross' AS type, e.name, d.dept_name
+FROM Employees e
+CROSS JOIN Departments d;
